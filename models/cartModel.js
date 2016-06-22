@@ -1,21 +1,16 @@
 (function (angular) {
     'use strict';
-    var cartModel = angular.module('Cart.Model', []);
+    var cartModel = angular.module('Cart.Model', ['Items.Model']);
     cartModel.factory('Cart',
-        function () {
-            var currentData = '', localStorageKey = 'MasalaAndSpices';
+        function (Items) {
+            var currentData = '',
+                localStorageKey = 'MasalaAndSpices',
+                cachedCartItemById; // cached quantity of items by id
 
             function CartModel() {
-                var localStorageItems = localStorage.getItem(localStorageKey);
                 this.itemsById = {};
                 this.totalItems = 0;
                 this.totalPrice = 0;
-                if (localStorageItems) {
-                    var jsonItems = JSON.parse(localStorageItems);
-                    this.itemsById = jsonItems.itemsById || {};
-                    this.totalItems = jsonItems.totalItems || 0;
-                    this.totalPrice = jsonItems.totalPrice || 0;
-                }
             }
 
             CartModel.prototype = (function () {
@@ -25,18 +20,36 @@
                     this.itemsById[id] = item;
                     this.totalItems++;
                     this.totalPrice += item.price;
-                    localStorage.setItem(localStorageKey, JSON.stringify(this));
+                    cachedCartItemById = cachedCartItemById || {};
+                    cachedCartItemById[id] = 1;
+                    localStorage.setItem(localStorageKey, JSON.stringify(cachedCartItemById));
                 }
                 function removeItem(id) {
                     var item = this.itemsById[id];
                     this.totalPrice -= (item.price * item.quantity);
                     this.totalItems--;
                     delete this.itemsById[id];
-                    localStorage.setItem(localStorageKey, JSON.stringify(this));
+                    delete cachedCartItemById[id];
+                    localStorage.setItem(localStorageKey, JSON.stringify(cachedCartItemById));
+                }
+                function getItemsFromCache() {
+                    var self = this;
+                    cachedCartItemById = JSON.parse(localStorage.getItem(localStorageKey));
+                    if (cachedCartItemById) {
+                        var items = Items().getCurrentInstance();
+                        angular.forEach(cachedCartItemById, function (itemQuantity, id) {
+                            self.itemsById[id] = items.itemsById[id];
+                            self.itemsById[id].quantity = itemQuantity;
+                            self.totalItems += 1;
+                            self.totalPrice += items.itemsById[id].price * itemQuantity;
+                        });
+                    }
+                    
                 }
                 return {
                     addItem: addItem,
-                    removeItem: removeItem
+                    removeItem: removeItem,
+                    getItemsFromCache: getItemsFromCache
                 };
             })();
 

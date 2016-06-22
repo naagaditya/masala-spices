@@ -7,6 +7,7 @@
 
             function ItemsModel() {
                 this.items = [];
+                this.itemsById = {};
             }
 
             ItemsModel.prototype = (function () {
@@ -16,6 +17,9 @@
                         self = this;
                     promise.then(function (response) {
                         self.items = response.data.items;
+                        response.data.items.forEach(function (item) {
+                            self.itemsById[item.id] = item;
+                        });
                         deferred.resolve('success');
                     },
                     function (error) {
