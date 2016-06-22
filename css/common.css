@@ -1,0 +1,19 @@
+.all-padding-10 {
+	padding: 10;
+}
+.all-padding-30 {
+	padding: 30;
+}
+.bold-font {
+	font-weight: bold;
+}
+.solid-border {
+	border: solid 2px;
+}
+.center-align {
+	text-align: center;
+}
+.table-header {
+	background: gainsboro;
+	font-weight: bold;
+}

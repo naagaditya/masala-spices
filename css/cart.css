@@ -1,0 +1,9 @@
+.divider {
+	border: solid 1px;
+}
+
+.remove-item {
+	font-size: 11px;
+    padding-left: 4px;
+    padding-right: 4px;
+}

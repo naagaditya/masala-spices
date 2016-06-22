@@ -1,0 +1,47 @@
+<div class="all-padding-30"></div>
+<div class="solid-border center-align" ng-if="cart.totalItems">
+	<div class="all-padding-10">
+		<p class="bold-font">Your Cart Summary</p>
+		<div class="row">
+			<div class="col-md-8">
+				<p class="table-header">Item(s) in cart</p>
+				<p class="bold-font">{{cart.totalItems}}</p>
+			</div>
+			<div class="col-md-4">
+				<p class="table-header">Total Rs</p>
+				<p class="bold-font">{{cart.totalPrice}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div class="row all-padding-10">
+		<div class="col-md-3">
+			<p>Item</p>
+		</div>
+		<div class="col-md-2">
+			<p>Quantity</p>
+		</div>
+		<div class="col-md-4">
+			<p>Total Rs</p>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+	<div class="row" ng-repeat="item in cart.itemsById">
+		<div class="col-md-3">
+			<p>{{item.brandName + ' ' + item.productName}}</p>
+		</div>
+		<div class="col-md-2">
+			<p>{{item.quantity}}</p>
+		</div>
+		<div class="col-md-4">
+			<p>{{item.price * item.quantity}}</p>
+		</div>
+		<div class="col-md-3">
+			<button
+				class="btn btn-danger remove-item"
+				ng-click="cart.removeItem(item.id)">Remove</button>
+		</div>
+	</div>
+
+</div>

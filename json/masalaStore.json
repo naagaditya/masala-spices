@@ -1,0 +1,52 @@
+{"items":
+	[
+	  {
+	    "id": 1,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand1",
+	    "productName": "Product1",
+	    "packingDetail": "detail",
+	    "price": 100
+	  },
+	  {
+	    "id": 2,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand2",
+	    "productName": "Product2",
+	    "packingDetail": "detail",
+	    "price": 100
+	  },
+	  {
+	    "id": 3,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand2",
+	    "productName": "Product2",
+	    "packingDetail": "detail",
+	    "price": 100
+	  },
+	  {
+	    "id": 4,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand2",
+	    "productName": "Product2",
+	    "packingDetail": "detail",
+	    "price": 100
+	  },
+	  {
+	    "id": 5,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand2",
+	    "productName": "Product2",
+	    "packingDetail": "detail",
+	    "price": 100
+	  },
+	  {
+	    "id": 6,
+	    "productImage": "images/images1.jpg",
+	    "brandName": "brand2",
+	    "productName": "Product2",
+	    "packingDetail": "detail",
+	    "price": 100
+	  }
+	]
+}
