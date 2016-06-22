@@ -3,50 +3,50 @@
 	  {
 	    "id": 1,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand1",
-	    "productName": "Product1",
-	    "packingDetail": "detail",
-	    "price": 100
+	    "brandName": "MTR",
+	    "productName": "Chicken Masala",
+	    "packingDetail": "bhut acha masala",
+	    "price": 75
 	  },
 	  {
 	    "id": 2,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand2",
-	    "productName": "Product2",
-	    "packingDetail": "detail",
-	    "price": 100
+	    "brandName": "MDH",
+	    "productName": "Deggi Mirch",
+	    "packingDetail": "Asli massale sach sach",
+	    "price": 155
 	  },
 	  {
 	    "id": 3,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand2",
-	    "productName": "Product2",
-	    "packingDetail": "detail",
+	    "brandName": "Everest",
+	    "productName": "Mirch",
+	    "packingDetail": "Everest ka teekha lal",
 	    "price": 100
 	  },
 	  {
 	    "id": 4,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand2",
-	    "productName": "Product2",
-	    "packingDetail": "detail",
-	    "price": 100
+	    "brandName": "Local",
+	    "productName": "Coriander Powder",
+	    "packingDetail": "dhania masala",
+	    "price": 14
 	  },
 	  {
 	    "id": 5,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand2",
-	    "productName": "Product2",
-	    "packingDetail": "detail",
-	    "price": 100
+	    "brandName": "Green Pepper",
+	    "productName": "Green Chilli",
+	    "packingDetail": "karui bhut jyada",
+	    "price": 200
 	  },
 	  {
 	    "id": 6,
 	    "productImage": "images/images1.jpg",
-	    "brandName": "brand2",
-	    "productName": "Product2",
-	    "packingDetail": "detail",
-	    "price": 100
+	    "brandName": "MDH",
+	    "productName": "Chola Masala",
+	    "packingDetail": "chooooola masalaaaaaaaaa",
+	    "price": 130
 	  }
 	]
 }
